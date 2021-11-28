@@ -27,19 +27,14 @@ namespace Calc
             while (true)
             {
                 Console.WriteLine("Продолжить? Выберите Y или N");
-                bool status = true;
-                switch(Console.ReadLine())
-                {
-                    case "Y":
-                    case "y":
-                    case "Н":
-                    case "н": status = true; break;
-                    case "N":
-                    case "n":
-                    case "Т":
-                    case "т": status = false; break;
-                }
-                return status;
+                var status = Console.ReadLine();
+
+                if (status == "Y" || status == "y")
+                    return true;
+                else if (status == "N" || status == "n")
+                    return false;
+                else
+                    Console.WriteLine("Операция не распознана");
             }
         }
 
